@@ -1,1 +1,156 @@
 prueba es de texto el index
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product h3 {
+            color: #333;
+        }
+        .product p {
+            color: #666;
+        }
+        .btn-buy {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-buy:hover {
+            background-color: #218838;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenido a Nuestra Tienda Online</h1>
+    <p>¡Compra los mejores productos a precios increíbles!</p>
+</header>
+
+<div class="container">
+    <!-- Productos -->
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/300x200" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>Descripción breve del producto. ¡Un producto increíble!</p>
+            <button class="btn-buy" onclick="comprar('Producto 1')">Comprar</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x200" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Descripción breve del producto. ¡No te lo puedes perder!</p>
+            <button class="btn-buy" onclick="comprar('Producto 2')">Comprar</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x200" alt="Producto 3">
+            <h3>Producto 3</h3>
+            <p>Descripción breve del producto. ¡El mejor de todos!</p>
+            <button class="btn-buy" onclick="comprar('Producto 3')">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="contact-form">
+        <h3>Contáctanos</h3>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Tu nombre" required>
+            <input type="email" id="email" placeholder="Tu correo electrónico" required>
+            <textarea id="message" rows="5" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Función para simular la compra
+    function comprar(producto) {
+        alert('¡Gracias por comprar ' + producto + '! Tu pedido está siendo procesado.');
+    }
+
+    // Manejar el envío del formulario
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Recoger los datos del formulario
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Simulación de envío
+        alert('Mensaje enviado por: ' + name + '\nCorreo: ' + email + '\nMensaje: ' + message);
+
+        // Limpiar el formulario después de enviar
+        document.getElementById('contact-form').reset();
+    });
+</script>
+
+</body>
+</html>
